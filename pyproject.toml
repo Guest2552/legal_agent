@@ -4,6 +4,23 @@ version = "1.0.0"
 description = "Grounded, voice-enabled legal document assistant powered by Gemini."
 readme = "README.md"
 requires-python = ">=3.11"
+# Keep in sync with requirements.txt (Vercel installs from here).
+dependencies = [
+  "fastapi==0.141.1",
+  "uvicorn[standard]==0.53.0",
+  "google-genai==2.24.0",
+  "pydantic==2.13.5",
+  "pydantic-settings==2.15.0",
+  "python-multipart==0.0.32",
+  "numpy==2.4.6",
+  "pypdf==6.19.0",
+  "python-docx==1.2.0",
+  "openpyxl==3.1.5",
+  "python-pptx==1.0.2",
+]
+
+[tool.vercel]
+entrypoint = "app.main:app"
 
 [tool.ruff]
 line-length = 120

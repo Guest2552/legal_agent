@@ -6,10 +6,15 @@ the code never reads ``os.environ`` directly.
 
 from __future__ import annotations
 
+import os
 from functools import lru_cache
 
 from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+# Vercel sets VERCEL=1. Its functions can only write to /tmp and accept request bodies up
+# to 4.5 MB, so the defaults adapt there (both can still be overridden with env vars).
+ON_VERCEL = bool(os.environ.get("VERCEL"))
 
 
 class Settings(BaseSettings):
@@ -41,8 +46,8 @@ class Settings(BaseSettings):
     history_turns: int = Field(default=10, ge=0, le=40)
 
     # --- Storage & limits -------------------------------------------------------------
-    database_path: str = "data/lexiguide.db"
-    max_upload_mb: int = Field(default=50, ge=1, le=200)
+    database_path: str = "/tmp/lexiguide.db" if ON_VERCEL else "data/lexiguide.db"  # noqa: S108
+    max_upload_mb: int = Field(default=4 if ON_VERCEL else 50, ge=1, le=200)
     max_documents_per_session: int = Field(default=20, ge=1)
     max_session_chars: int = Field(default=10_000_000, ge=10_000)
     session_ttl_days: int = Field(default=30, ge=1)
