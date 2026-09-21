@@ -1,0 +1,10 @@
+{
+  "name": "lexiguide-frontend-tests",
+  "private": true,
+  "type": "module",
+  "description": "Dependency-free unit tests for LexiGuide's browser modules (node:test).",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test \"tests/js/*.test.mjs\""
+  }
+}

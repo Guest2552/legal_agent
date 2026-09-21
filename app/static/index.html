@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LexiGuide - Legal documents, made clear</title>
+    <meta
+      name="description"
+      content="Understand, compare and act on legal documents with a grounded, voice-enabled assistant powered by Gemini."
+    />
+    <meta name="theme-color" content="#f6f1e8" />
+    <link rel="icon" href="/static/img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <script type="module" src="/static/js/main.js"></script>
+  </head>
+  <body>
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M5 21h14M6 7h12M4 7l-2.5 6a3.5 3.5 0 0 0 5 0L4 7Zm16 0-2.5 6a3.5 3.5 0 0 0 5 0L20 7ZM12 3l-1 2h2Z"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="i-clip" viewBox="0 0 24 24"><path d="m20 11.5-8.2 8.2a5 5 0 0 1-7.1-7.1l8.5-8.5a3.3 3.3 0 0 1 4.7 4.7l-8.4 8.4a1.7 1.7 0 0 1-2.4-2.4l7.7-7.7"/></symbol>
+      <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4m0 0-4 4m4-4 4 4M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Zm0 0v5h5M9 13h6M9 17h4"/></symbol>
+      <symbol id="i-sheet" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5Zm0 5h16M4 15h16M10 10v11"/></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24"><path d="M4 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5Zm0 11 5-5 5 5m-2-2 2-2 6 6M15 8.5h.01"/></symbol>
+      <symbol id="i-audio" viewBox="0 0 24 24"><path d="M3 12h2m3-5v10m4-13v16m4-11v6m4-4v2"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 6l9 7 9-7"/></symbol>
+      <symbol id="i-slides" viewBox="0 0 24 24"><path d="M3 4h18v12H3zM12 16v4m-4 0h8"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3m-9 0 1 13h10l1-13M10 11v6m4-6v6"/></symbol>
+      <symbol id="i-pencil" viewBox="0 0 24 24"><path d="m4 20 4-1 11-11-3-3L5 16l-1 4Zm10-13 3 3"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Zm10 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></symbol>
+      <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Zm-7 9a7 7 0 0 0 14 0M12 19v3"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5m0 0-6 6m6-6 6 6"/></symbol>
+      <symbol id="i-stop" viewBox="0 0 24 24"><path d="M8 8h8v8H8z"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M5 5h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H10l-5 4V6a1 1 0 0 1 1-1Z"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8L12 3Zm6 11 .9 2.1L21 17l-2.1.9L18 20l-.9-2.1L15 17l2.1-.9L18 14Z"/></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2 20h20L12 3Zm0 6v5m0 3h.01"/></symbol>
+      <symbol id="i-columns" viewBox="0 0 24 24"><path d="M4 4h7v16H4zM13 4h7v16h-7z"/></symbol>
+      <symbol id="i-checklist" viewBox="0 0 24 24"><path d="m4 6 1.5 1.5L8 5M4 12l1.5 1.5L8 11m-4 7 1.5 1.5L8 17m4-11h8m-8 6h8m-8 6h8"/></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M3 8h18v11H3zM8 8V5h8v3M3 13h18"/></symbol>
+      <symbol id="i-clipboard" viewBox="0 0 24 24"><path d="M9 4h6v3H9zM7 5H5v16h14V5h-2M8 12h8m-8 4h5"/></symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h10m4 0h2M4 17h4m4 0h8M14 5v4m-6 6v4"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><path d="M6 11h12v9H6zM8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><path d="M9 9h11v11H9zM5 15H4V4h11v1"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M4 19h16"/></symbol>
+      <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V4h10v5M7 17H4v-7h16v7h-3M7 14h10v6H7z"/></symbol>
+      <symbol id="i-speaker" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4V9Zm12 0a4 4 0 0 1 0 6m2.5-8.5a7.5 7.5 0 0 1 0 11"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm-9 9h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9s1-6.5 3.5-9Z"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Zm-3.5 9 2.5 2.5 4.5-5"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0"/></symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <div class="app" id="app">
+      <!-- Sidebar: chat history and documents ---------------------------------------- -->
+      <aside class="sidebar" id="sidebar" aria-label="Chats and documents">
+        <div class="sidebar-head">
+          <a class="brand" href="/" aria-label="LexiGuide home">
+            <span class="brand-mark" aria-hidden="true"><svg class="icon"><use href="#i-scale" /></svg></span>
+            <span class="brand-name">LexiGuide</span>
+          </a>
+          <button type="button" class="icon-btn only-mobile" id="sidebar-close" aria-label="Close menu">
+            <svg class="icon"><use href="#i-x" /></svg>
+          </button>
+        </div>
+
+        <div class="sidebar-actions">
+          <button type="button" class="btn btn-new" id="new-chat">
+            <svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg>New chat
+          </button>
+        </div>
+
+        <div class="sidebar-body">
+          <nav class="side-section" aria-labelledby="chats-heading">
+            <h2 class="side-heading" id="chats-heading">Chats</h2>
+            <ul class="side-list" id="chat-list"></ul>
+            <p class="side-empty" id="chat-list-empty">Your conversations will appear here.</p>
+          </nav>
+
+          <section class="side-section" aria-labelledby="docs-heading">
+            <div class="side-heading-row">
+              <h2 class="side-heading" id="docs-heading">Documents <span class="side-count" id="doc-count"></span></h2>
+              <button type="button" class="icon-btn icon-btn-sm" id="add-doc-btn" aria-label="Add documents" title="Add documents">
+                <svg class="icon"><use href="#i-plus" /></svg>
+              </button>
+            </div>
+            <ul class="side-list" id="doc-list" aria-label="Your documents"></ul>
+            <p class="side-empty" id="doc-list-empty">
+              No documents yet. <button type="button" class="link-btn" data-open-add>Add one</button>
+            </p>
+          </section>
+        </div>
+
+        <div class="sidebar-foot">
+          <button type="button" class="side-link" id="open-settings" aria-haspopup="dialog">
+            <svg class="icon" aria-hidden="true"><use href="#i-settings" /></svg>Settings
+          </button>
+          <p class="privacy-note">
+            <svg class="icon" aria-hidden="true"><use href="#i-lock" /></svg>
+            <span>Private to this browser. Kept for <span id="ttl-days">30</span> days of inactivity.</span>
+          </p>
+        </div>
+      </aside>
+      <div class="scrim" id="scrim" hidden></div>
+
+      <!-- Main area ---------------------------------------------------------------------- -->
+      <div class="main">
+        <header class="topbar">
+          <button type="button" class="icon-btn only-mobile" id="menu-toggle" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">
+            <svg class="icon"><use href="#i-menu" /></svg>
+          </button>
+          <div class="tool-nav" role="tablist" aria-label="Tools">
+            <button type="button" role="tab" id="tab-ask" aria-controls="panel-ask" aria-selected="true">
+              <svg class="icon" aria-hidden="true"><use href="#i-chat" /></svg>Chat
+            </button>
+            <button type="button" role="tab" id="tab-simplify" aria-controls="panel-simplify" aria-selected="false" tabindex="-1">
+              <svg class="icon" aria-hidden="true"><use href="#i-sparkles" /></svg>Simplify
+            </button>
+            <button type="button" role="tab" id="tab-risks" aria-controls="panel-risks" aria-selected="false" tabindex="-1">
+              <svg class="icon" aria-hidden="true"><use href="#i-alert" /></svg>Risk scan
+            </button>
+            <button type="button" role="tab" id="tab-compare" aria-controls="panel-compare" aria-selected="false" tabindex="-1">
+              <svg class="icon" aria-hidden="true"><use href="#i-columns" /></svg>Compare
+            </button>
+            <button type="button" role="tab" id="tab-plan" aria-controls="panel-plan" aria-selected="false" tabindex="-1">
+              <svg class="icon" aria-hidden="true"><use href="#i-checklist" /></svg>Next steps
+            </button>
+            <button type="button" role="tab" id="tab-brief" aria-controls="panel-brief" aria-selected="false" tabindex="-1">
+              <svg class="icon" aria-hidden="true"><use href="#i-briefcase" /></svg>Lawyer brief
+            </button>
+          </div>
+          <button type="button" class="context-chip" id="context-chip" aria-haspopup="dialog" title="Language, jurisdiction and your role">
+            <svg class="icon" aria-hidden="true"><use href="#i-user" /></svg>
+            <span id="context-label">English</span>
+          </button>
+        </header>
+
+        <main id="main" class="content" tabindex="-1">
+          <!-- Chat ------------------------------------------------------------------------ -->
+          <section id="panel-ask" class="tab-panel panel-chat" role="tabpanel" aria-labelledby="tab-ask">
+            <div class="chat-log" id="chat-log" role="log" aria-label="Conversation">
+              <div class="column chat-thread" id="chat-thread"></div>
+            </div>
+
+            <div class="composer-wrap">
+              <div class="column">
+                <div class="voice-bar" id="voice-bar" hidden>
+                  <div class="voice-orb" aria-hidden="true"><span class="voice-level" id="voice-level"></span></div>
+                  <div class="voice-text">
+                    <p class="voice-state" id="voice-state">Listening</p>
+                    <p class="voice-caption" id="voice-caption">Just start talking. No button needed.</p>
+                  </div>
+                  <button type="button" class="btn btn-quiet btn-sm" id="voice-interrupt">Interrupt</button>
+                  <button type="button" class="btn btn-outline btn-sm" id="voice-end">End</button>
+                </div>
+
+                <form class="composer" id="chat-form" novalidate>
+                  <label for="chat-input" class="visually-hidden">Your question</label>
+                  <textarea id="chat-input" rows="1" maxlength="4000" placeholder="Ask about your documents or any legal question..."></textarea>
+                  <div class="composer-bar">
+                    <div class="composer-tools">
+                      <button type="button" class="tool-btn" data-open-add title="Add documents" aria-label="Add documents">
+                        <svg class="icon" aria-hidden="true"><use href="#i-clip" /></svg>
+                      </button>
+                      <label class="tool-select">
+                        <span class="visually-hidden">Search in</span>
+                        <select id="chat-scope"><option value="">All documents</option></select>
+                      </label>
+                      <label class="tool-toggle" title="Check current law with Google Search">
+                        <input type="checkbox" id="web-search" checked />
+                        <span><svg class="icon" aria-hidden="true"><use href="#i-globe" /></svg>Web check</span>
+                      </label>
+                    </div>
+                    <div class="composer-send">
+                      <button type="button" class="talk-btn" id="voice-toggle" aria-pressed="false" title="Hands-free voice conversation (Alt+V)">
+                        <svg class="icon" aria-hidden="true"><use href="#i-mic" /></svg>
+                        <span class="btn-voice-label">Talk</span>
+                      </button>
+                      <button type="submit" class="send-btn" id="send-btn" aria-label="Send question">
+                        <svg class="icon" aria-hidden="true"><use href="#i-arrow-up" /></svg>
+                      </button>
+                      <button type="button" class="send-btn" id="stop-btn" hidden aria-label="Stop generating">
+                        <svg class="icon" aria-hidden="true"><use href="#i-stop" /></svg>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+                <p class="composer-note">
+                  Answers cite your documents and every quote is checked. LexiGuide gives legal information, not a replacement for a lawyer.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Simplify ------------------------------------------------------------------- -->
+          <section id="panel-simplify" class="tab-panel" role="tabpanel" aria-labelledby="tab-simplify" hidden>
+            <div class="tool-page">
+              <header class="tool-head">
+                <h2>Simplify a document</h2>
+                <p>A plain-language explanation with key points, a section-by-section walkthrough and a glossary.</p>
+              </header>
+              <form class="tool-card" data-tool="simplify">
+                <div class="field">
+                  <label for="simplify-doc">Document</label>
+                  <select id="simplify-doc" name="document_id" data-doc-select required></select>
+                </div>
+                <fieldset class="field">
+                  <legend>Reading level</legend>
+                  <div class="segmented">
+                    <label><input type="radio" name="level" value="simple" /><span>Very simple</span></label>
+                    <label><input type="radio" name="level" value="standard" checked /><span>Plain English</span></label>
+                    <label><input type="radio" name="level" value="detailed" /><span>Detailed</span></label>
+                  </div>
+                </fieldset>
+                <div class="tool-actions"><button type="submit" class="btn btn-primary">Simplify</button></div>
+              </form>
+              <div class="tool-result" id="result-simplify"></div>
+            </div>
+          </section>
+
+          <!-- Risk scan ------------------------------------------------------------------ -->
+          <section id="panel-risks" class="tab-panel" role="tabpanel" aria-labelledby="tab-risks" hidden>
+            <div class="tool-page">
+              <header class="tool-head">
+                <h2>Risk scan</h2>
+                <p>Clause-by-clause risk ratings, obligations, deadlines, red flags, contradictions and missing protections.</p>
+              </header>
+              <form class="tool-card" data-tool="risks">
+                <div class="field">
+                  <label for="risks-doc">Document</label>
+                  <select id="risks-doc" name="document_id" data-doc-select required></select>
+                </div>
+                <div class="tool-actions"><button type="submit" class="btn btn-primary">Scan for risks</button></div>
+              </form>
+              <div class="tool-result" id="result-risks"></div>
+            </div>
+          </section>
+
+          <!-- Compare -------------------------------------------------------------------- -->
+          <section id="panel-compare" class="tab-panel" role="tabpanel" aria-labelledby="tab-compare" hidden>
+            <div class="tool-page">
+              <header class="tool-head">
+                <h2>Compare two documents</h2>
+                <p>Every material difference, which version is better for you, and what to negotiate.</p>
+              </header>
+              <form class="tool-card" data-tool="compare">
+                <div class="field-row">
+                  <div class="field">
+                    <label for="compare-a">Document A</label>
+                    <select id="compare-a" name="document_a" data-doc-select required></select>
+                  </div>
+                  <div class="field">
+                    <label for="compare-b">Document B</label>
+                    <select id="compare-b" name="document_b" data-doc-select="second" required></select>
+                  </div>
+                </div>
+                <div class="tool-actions"><button type="submit" class="btn btn-primary">Compare</button></div>
+              </form>
+              <div class="tool-result" id="result-compare"></div>
+            </div>
+          </section>
+
+          <!-- Next steps ----------------------------------------------------------------- -->
+          <section id="panel-plan" class="tab-panel" role="tabpanel" aria-labelledby="tab-plan" hidden>
+            <div class="tool-page">
+              <header class="tool-head">
+                <h2>Next steps</h2>
+                <p>Your legal position, realistic options, a prioritised checklist and every deadline.</p>
+              </header>
+              <form class="tool-card" data-tool="plan">
+                <div class="field">
+                  <label for="plan-situation">Describe your situation <span class="optional">(type or dictate)</span></label>
+                  <div class="textarea-with-action">
+                    <textarea id="plan-situation" name="situation" rows="4" maxlength="6000" placeholder="e.g. I moved out on 31 August and the landlord is keeping my whole deposit for repainting."></textarea>
+                    <button type="button" class="icon-btn dictate-btn" data-dictate="plan-situation" aria-label="Dictate your situation">
+                      <svg class="icon"><use href="#i-mic" /></svg>
+                    </button>
+                  </div>
+                </div>
+                <fieldset class="field doc-checks" data-doc-checks>
+                  <legend>Use these documents</legend>
+                </fieldset>
+                <div class="tool-actions"><button type="submit" class="btn btn-primary">Build my plan</button></div>
+              </form>
+              <div class="tool-result" id="result-plan"></div>
+            </div>
+          </section>
+
+          <!-- Lawyer brief --------------------------------------------------------------- -->
+          <section id="panel-brief" class="tab-panel" role="tabpanel" aria-labelledby="tab-brief" hidden>
+            <div class="tool-page">
+              <header class="tool-head">
+                <h2>Lawyer brief</h2>
+                <p>A one-page case summary, timeline and sharp questions, so a first consultation is short and cheap.</p>
+              </header>
+              <form class="tool-card" data-tool="brief">
+                <div class="field">
+                  <label for="brief-situation">What happened and what do you want? <span class="optional">(type or dictate)</span></label>
+                  <div class="textarea-with-action">
+                    <textarea id="brief-situation" name="situation" rows="4" maxlength="6000" placeholder="Key facts, dates and the outcome you want."></textarea>
+                    <button type="button" class="icon-btn dictate-btn" data-dictate="brief-situation" aria-label="Dictate your situation">
+                      <svg class="icon"><use href="#i-mic" /></svg>
+                    </button>
+                  </div>
+                </div>
+                <fieldset class="field doc-checks" data-doc-checks>
+                  <legend>Use these documents</legend>
+                </fieldset>
+                <div class="tool-actions"><button type="submit" class="btn btn-primary">Prepare brief</button></div>
+              </form>
+              <div class="tool-result" id="result-brief"></div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- Dialogs ------------------------------------------------------------------------------ -->
+    <dialog id="add-doc-dialog" class="dialog" aria-labelledby="add-doc-title">
+      <div class="dialog-head">
+        <h2 id="add-doc-title">Add documents</h2>
+        <button type="button" class="icon-btn" data-close aria-label="Close"><svg class="icon"><use href="#i-x" /></svg></button>
+      </div>
+      <div class="dropzone" id="dropzone">
+        <input id="file-input" type="file" multiple class="visually-hidden" />
+        <label for="file-input" class="dropzone-label">
+          <span class="dropzone-icon" aria-hidden="true"><svg class="icon"><use href="#i-upload" /></svg></span>
+          <span class="dropzone-title">Drop files here or <u>browse</u></span>
+          <span class="dropzone-hint" id="accepted-hint">PDF, Word, Excel, PowerPoint, text, e-mail, images and audio</span>
+        </label>
+      </div>
+      <div class="option-grid">
+        <button type="button" class="option-btn" id="paste-text-btn">
+          <svg class="icon" aria-hidden="true"><use href="#i-clipboard" /></svg>
+          <span><strong>Paste text</strong><small>A clause, e-mail or notice</small></span>
+        </button>
+        <button type="button" class="option-btn" id="voice-note-btn">
+          <svg class="icon" aria-hidden="true"><use href="#i-mic" /></svg>
+          <span><strong>Voice note</strong><small>Describe it in any language</small></span>
+        </button>
+        <button type="button" class="option-btn" id="sample-btn">
+          <svg class="icon" aria-hidden="true"><use href="#i-sparkles" /></svg>
+          <span><strong>Try samples</strong><small>Two rental agreements</small></span>
+        </button>
+      </div>
+    </dialog>
+
+    <dialog id="paste-dialog" class="dialog" aria-labelledby="paste-title">
+      <form method="dialog" id="paste-form">
+        <div class="dialog-head">
+          <h2 id="paste-title">Paste text</h2>
+          <button type="button" class="icon-btn" data-close aria-label="Close"><svg class="icon"><use href="#i-x" /></svg></button>
+        </div>
+        <div class="field">
+          <label for="paste-name">Name</label>
+          <input id="paste-name" maxlength="120" value="Pasted text" required />
+        </div>
+        <div class="field">
+          <label for="paste-body">Text</label>
+          <textarea id="paste-body" rows="10" minlength="20" maxlength="500000" required placeholder="Paste a contract, clause, policy or notice..."></textarea>
+        </div>
+        <div class="dialog-actions">
+          <button type="button" class="btn btn-quiet" data-close>Cancel</button>
+          <button type="submit" class="btn btn-primary" value="save">Add document</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="recorder-dialog" class="dialog" aria-labelledby="recorder-title">
+      <div class="dialog-head">
+        <h2 id="recorder-title">Record a voice note</h2>
+      </div>
+      <p id="recorder-help" class="muted">Describe your situation in any language. Gemini transcribes it.</p>
+      <div class="recorder">
+        <div class="recorder-meter" aria-hidden="true"><span id="recorder-level"></span></div>
+        <p class="recorder-time" id="recorder-time" role="timer">0:00</p>
+      </div>
+      <div class="dialog-actions">
+        <button type="button" class="btn btn-quiet" id="recorder-cancel">Cancel</button>
+        <button type="button" class="btn btn-primary" id="recorder-toggle">Start recording</button>
+      </div>
+    </dialog>
+
+    <dialog id="source-dialog" class="dialog dialog-wide" aria-labelledby="source-title">
+      <div class="dialog-head">
+        <div>
+          <h2 id="source-title">Source</h2>
+          <p id="source-meta" class="muted"></p>
+        </div>
+        <button type="button" class="icon-btn" data-close aria-label="Close"><svg class="icon"><use href="#i-x" /></svg></button>
+      </div>
+      <div id="source-text" class="reader" tabindex="0"></div>
+    </dialog>
+
+    <dialog id="viewer-dialog" class="dialog dialog-wide" aria-labelledby="viewer-title">
+      <div class="dialog-head">
+        <h2 id="viewer-title">Document</h2>
+        <button type="button" class="icon-btn" data-close aria-label="Close"><svg class="icon"><use href="#i-x" /></svg></button>
+      </div>
+      <div id="viewer-body" class="reader" tabindex="0"></div>
+    </dialog>
+
+    <dialog id="settings-dialog" class="dialog" aria-labelledby="settings-title">
+      <form method="dialog">
+        <div class="dialog-head">
+          <h2 id="settings-title">Settings</h2>
+          <button type="button" class="icon-btn" data-close aria-label="Close"><svg class="icon"><use href="#i-x" /></svg></button>
+        </div>
+
+        <section class="settings-group" aria-labelledby="about-heading">
+          <h3 id="about-heading">About you</h3>
+          <div class="field">
+            <label for="user-role">I am the</label>
+            <input id="user-role" list="role-options" maxlength="80" autocomplete="off" placeholder="e.g. Tenant, Employee, Freelancer" />
+            <datalist id="role-options">
+              <option value="Tenant"></option>
+              <option value="Landlord"></option>
+              <option value="Employee"></option>
+              <option value="Employer"></option>
+              <option value="Freelancer / contractor"></option>
+              <option value="Buyer"></option>
+              <option value="Seller"></option>
+              <option value="Consumer"></option>
+              <option value="Borrower"></option>
+              <option value="Small business owner"></option>
+              <option value="Policy holder"></option>
+            </datalist>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="language">Answer language</label>
+              <select id="language"></select>
+            </div>
+            <div class="field">
+              <label for="jurisdiction">Jurisdiction</label>
+              <select id="jurisdiction"></select>
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-group" aria-labelledby="voice-heading">
+          <h3 id="voice-heading">Voice</h3>
+          <div class="field-row">
+            <div class="field">
+              <label for="pref-engine">Speech recognition</label>
+              <select id="pref-engine">
+                <option value="auto">Automatic (fastest)</option>
+                <option value="gemini">Gemini (any browser)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="pref-rate">Speaking speed <output id="pref-rate-value" for="pref-rate">1.0x</output></label>
+              <input type="range" id="pref-rate" min="0.7" max="1.5" step="0.1" value="1" />
+            </div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="pref-barge" checked />
+            <span class="switch-track" aria-hidden="true"></span>
+            <span>Interrupt the assistant by speaking (best with headphones)</span>
+          </label>
+        </section>
+
+        <section class="settings-group" aria-labelledby="display-heading">
+          <h3 id="display-heading">Text size</h3>
+          <div class="segmented" role="radiogroup" aria-labelledby="display-heading">
+            <label><input type="radio" name="text-size" value="0.9" /><span>Small</span></label>
+            <label><input type="radio" name="text-size" value="1" /><span>Default</span></label>
+            <label><input type="radio" name="text-size" value="1.12" /><span>Large</span></label>
+            <label><input type="radio" name="text-size" value="1.25" /><span>Larger</span></label>
+          </div>
+        </section>
+
+        <section class="settings-group" aria-labelledby="data-heading">
+          <h3 id="data-heading">Your data</h3>
+          <div class="data-actions">
+            <button type="button" class="btn btn-outline btn-sm" id="clear-chats">Delete all chats</button>
+            <button type="button" class="btn btn-outline btn-sm" id="clear-docs">Delete all documents</button>
+          </div>
+        </section>
+
+        <div class="dialog-actions">
+          <button type="submit" class="btn btn-primary">Done</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="rename-dialog" class="dialog dialog-small" aria-labelledby="rename-title">
+      <form method="dialog" id="rename-form">
+        <div class="dialog-head"><h2 id="rename-title">Rename chat</h2></div>
+        <div class="field">
+          <label for="rename-input" class="visually-hidden">Chat name</label>
+          <input id="rename-input" maxlength="120" required />
+        </div>
+        <div class="dialog-actions">
+          <button type="button" class="btn btn-quiet" data-close>Cancel</button>
+          <button type="submit" class="btn btn-primary" value="save">Save</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="confirm-dialog" class="dialog dialog-small" aria-labelledby="confirm-title" aria-describedby="confirm-text">
+      <form method="dialog">
+        <div class="dialog-head"><h2 id="confirm-title">Are you sure?</h2></div>
+        <p id="confirm-text" class="muted"></p>
+        <div class="dialog-actions">
+          <button type="button" class="btn btn-quiet" data-close>Cancel</button>
+          <button type="submit" class="btn btn-danger" value="confirm" id="confirm-ok">Delete</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div id="sr-status" class="visually-hidden" role="status" aria-live="polite"></div>
+    <div id="toasts" class="toasts" aria-live="assertive"></div>
+  </body>
+</html>
